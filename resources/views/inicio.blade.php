@@ -16,7 +16,7 @@
         </header>
 
         <main>
-            <h1>el que borre esto es pvto, att: jairo lopez - bisexual, xq amo los bi-lletes</h1>
+            <h1>el que borre esto es pvto, att: jairo lopez - bisexual, xq amo alos bisexuales</h1>
         </main>
 
         <footer>
