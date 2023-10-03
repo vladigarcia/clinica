@@ -14,9 +14,9 @@
         <header>
             <!-- place navbar here -->
         </header>
-        <h1>el que borre esto es puto att jairo lopez gay tanlo</h1>
-        <main>
 
+        <main>
+            <h1>el que borre esto es pvto, att: jairo lopez - bisexual, xq amo los bi-lletes</h1>
         </main>
 
         <footer>
