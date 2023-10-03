@@ -14,7 +14,7 @@
         <header>
             <!-- place navbar here -->
         </header>
-        <h1>que bonitos ojos tiene</h1>
+        <h1>mamawebo- digo glugluglugluglu</h1>
         <main>
 
         </main>
