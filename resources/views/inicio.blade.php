@@ -16,7 +16,7 @@
         </header>
 
         <main>
-            @yield('contenido')
+            
         </main>
 
         <footer>
