@@ -12,15 +12,15 @@
 
     <body>
         <header>
-            <!-- place navbar here -->
+            @yield('navbar')
         </header>
 
         <main>
-            <h1>el que borre esto es pvto, att: jairo lopez - bisexual, xq amo alos bisexuales</h1>
+            @yield('contenido')
         </main>
 
         <footer>
-            <!-- place footer here -->
+            @yield('footer')
         </footer>
 
         <!-- Bootstrap JavaScript Libraries -->
