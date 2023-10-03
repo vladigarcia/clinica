@@ -14,7 +14,7 @@
         <header>
             <!-- place navbar here -->
         </header>
-        <h1>mamawebo- digo glugluglugluglu</h1>
+        <h1>el que borre esto es puto att jairo lopez gay tanlo</h1>
         <main>
 
         </main>
