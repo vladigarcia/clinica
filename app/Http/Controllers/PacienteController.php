@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Paciente;
+use App\Models\Genero;
 use Illuminate\Http\Request;
 
 class PacienteController extends Controller
@@ -12,7 +13,8 @@ class PacienteController extends Controller
      */
     public function index()
     {
-        //
+        $pacientes = Paciente::all();
+        return view('pacientes.index', ['pacientes' => $pacientes]);
     }
 
     /**
@@ -20,7 +22,7 @@ class PacienteController extends Controller
      */
     public function create()
     {
-        //
+        return view('pacientes.create', ['niveles' => Nivel::all()]);
     }
 
     /**

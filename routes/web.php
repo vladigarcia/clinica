@@ -1,6 +1,10 @@
 <?php
 
-use App\Http\Controllers;
+use App\Http\Controllers\PacienteController;
+use App\Http\Controllers\MedicoController;
+use App\Http\Controllers\HorarioController;
+use App\Http\Controllers\ClinicaController;
+use App\Http\Controllers\CitaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
