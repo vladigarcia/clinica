@@ -37,7 +37,7 @@
         
                             <!-- Medicos -->
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="{{url('')}}" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pacientes</a>
+                                <a class="nav-link dropdown-toggle" href="{{url('')}}" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Medicos</a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownId">
                                     <a class="dropdown-item" href="#">Ver</a>
                                     <a class="dropdown-item" href="#">Agregar</a>
@@ -46,7 +46,7 @@
         
                             <!-- Horarios -->
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="{{url('')}}" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pacientes</a>
+                                <a class="nav-link dropdown-toggle" href="{{url('')}}" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Horarios</a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownId">
                                     <a class="dropdown-item" href="#">Ver</a>
                                     <a class="dropdown-item" href="#">Agregar</a>
@@ -55,7 +55,7 @@
         
                             <!-- Clinicas -->
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="{{url('')}}" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pacientes</a>
+                                <a class="nav-link dropdown-toggle" href="{{url('')}}" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clinicas</a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownId">
                                     <a class="dropdown-item" href="#">Ver</a>
                                     <a class="dropdown-item" href="#">Agregar</a>
@@ -64,7 +64,7 @@
         
                             <!-- Citas -->
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="{{url('')}}" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pacientes</a>
+                                <a class="nav-link dropdown-toggle" href="{{url('')}}" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Citas</a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownId">
                                     <a class="dropdown-item" href="#">Ver</a>
                                     <a class="dropdown-item" href="#">Agregar</a>
