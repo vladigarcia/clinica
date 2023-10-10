@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('apellido', 50);
             $table->string('direccion', 100);
             $table->string('telefono', 8);
-            $table->int('edad', 3);
+            $table->integer('edad');
             $table->date('fecha_nacimiento');
             $table->unsignedBigInteger('genero_id');
             $table->date('fecha_a');
