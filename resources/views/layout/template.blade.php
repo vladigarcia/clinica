@@ -23,15 +23,15 @@
         
                             <!-- Inicio -->
                             <li class="nav-item">
-                                <a class="nav-link active" href="{{url('inicio')}}" aria-current="page"> Inicio <span class="visually-hidden">(current)</span></a>
+                                <a class="nav-link active" href="{{route('inicio')}}" aria-current="page"> Inicio <span class="visually-hidden">(current)</span></a>
                             </li>
         
                             <!-- Pacientes -->
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pacientes</a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownId">
-                                    <a class="dropdown-item" href="{{url('pacientes/index')}}">Ver</a>
-                                    <a class="dropdown-item" href="{{url('pacientes/create')}}">Agregar</a>
+                                    <a class="dropdown-item" href="{{route('pacientes.index')}}">Ver</a>
+                                    <a class="dropdown-item" href="{{route('pacientes.create')}}">Agregar</a>
                                 </div>
                             </li>
         
