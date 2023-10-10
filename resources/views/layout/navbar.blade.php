@@ -1,4 +1,4 @@
-@extends('inicio')
+@extends('layout/template')
 
 @section('navbar')
     <nav class="navbar navbar-expand-md navbar-light bg-light">

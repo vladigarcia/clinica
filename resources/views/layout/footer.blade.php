@@ -1,4 +1,4 @@
-@extends('inicio')
+@extends('layout/template')
 
 @section('footer')
     <footer>
