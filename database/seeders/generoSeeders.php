@@ -12,6 +12,13 @@ class generoSeeders extends Seeder
      */
     public function run(): void
     {
-        //
+        $generos = ['Masculino', 'Femenino', 'Otro'];
+
+        foreach($generos as $genero)
+        {
+            DB:table('generos')->insert([
+                'nombre' => $genero
+            ]);
+        }
     }
 }
