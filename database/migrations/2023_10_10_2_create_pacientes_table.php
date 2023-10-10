@@ -8,17 +8,16 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('pacientes', function (Blueprint $table)
-        {
-            $table->id('');
+        Schema::create('pacientes', function (Blueprint $table) {
+            $table->id();
             $table->string('nombre', 50);
             $table->string('apellido', 50);
             $table->string('direccion', 100);
             $table->string('telefono', 8);
-            $table->int('edad', 3);
+            $table->integer('edad');
             $table->date('fecha_nacimiento');
-            $table->unsignedBigInteger('genero_id');
             $table->date('fecha_a');
+            $table->unsignedBigInteger('genero_id');
             $table->timestamps();
 
             $table->foreign('genero_id')->references('id')->on('generos');
