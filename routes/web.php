@@ -16,4 +16,4 @@ Route::resource( '/medicos', MedicosController::class );
 Route::resource( '/horarios', HorariosController::class );
 Route::resource( '/clinicas', ClinicasController::class );
 Route::resource( '/citas', CitasController::class );
-
+    

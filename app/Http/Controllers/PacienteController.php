@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Paciente;
 use App\Models\Genero;
-use App\Models\Nivel; // Importa el modelo Nivel
 use Illuminate\Http\Request;
 
 class PacienteController extends Controller
@@ -31,7 +30,7 @@ class PacienteController extends Controller
      */
     public function store(Request $request)
     {
-        // Aquí debes implementar la lógica para almacenar un nuevo paciente.
+        //
     }
 
     /**
@@ -39,7 +38,7 @@ class PacienteController extends Controller
      */
     public function show(Paciente $paciente)
     {
-        // Aquí debes implementar la lógica para mostrar un paciente específico.
+        //
     }
 
     /**
@@ -47,7 +46,7 @@ class PacienteController extends Controller
      */
     public function edit(Paciente $paciente)
     {
-        // Aquí debes implementar la lógica para editar un paciente específico.
+        //
     }
 
     /**
@@ -55,7 +54,7 @@ class PacienteController extends Controller
      */
     public function update(Request $request, Paciente $paciente)
     {
-        // Aquí debes implementar la lógica para actualizar un paciente específico.
+        //
     }
 
     /**
@@ -63,6 +62,6 @@ class PacienteController extends Controller
      */
     public function destroy(Paciente $paciente)
     {
-        // Aquí debes implementar la lógica para eliminar un paciente específico.
+        //
     }
 }

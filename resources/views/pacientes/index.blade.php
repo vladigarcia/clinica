@@ -1,6 +1,6 @@
 @extends('layout/template')
 
-@section('title', 'Tabla Pacientes | Clinica Juan Remedo')
+@section('title', 'Listado de Pacientes | Clínica Juan Remedo')
 
 @section('contenido')
     <main>
@@ -11,29 +11,35 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Matricula</th>
                         <th>Nombre</th>
-                        <th>Fecha de Nacimiento</th>
+                        <th>Apellido</th>
+                        <th>Dirección</th>
                         <th>Teléfono</th>
-                        <th>Email</th>
-                        <th>Nivel</th>
+                        <th>Edad</th>
+                        <th>Fecha de Nacimiento</th>
+                        <th>Fecha A</th>
+                        <th>Género ID</th>
                         <th></th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($alumnos as $alumno)
+                    @foreach ($pacientes as $paciente)
                         <tr>
-                            <td>{{ $alumno->id }}</td>
-                            <td>{{ $alumno->matricula }}</td>
-                            <td>{{ $alumno->nombre }}</td>
-                            <td>{{ $alumno->fecha_nacimiento }}</td>
-                            <td>{{ $alumno->telefono }}</td>
-                            <td>{{ $alumno->email }}</td>
-                            <td>{{ $alumno->nivel->nombre }}</td>
-                            <td> <a href="{{ url('alumnos/'. $alumno->id .'/edit') }}" class="btn btn-warning btn-sm">Editar</a> </td>
+                            <td>{{ $paciente->id }}</td>
+                            <td>{{ $paciente->nombre }}</td>
+                            <td>{{ $paciente->apellido }}</td>
+                            <td>{{ $paciente->direccion }}</td>
+                            <td>{{ $paciente->telefono }}</td>
+                            <td>{{ $paciente->edad }}</td>
+                            <td>{{ $paciente->fecha_nacimiento }}</td>
+                            <td>{{ $paciente->fecha_a }}</td>
+                            <td>{{ $paciente->genero_id }}</td>
                             <td>
-                                <form action="{{ url('alumnos/'. $alumno->id) }}" method="post">
+                                <a href="{{ url('pacientes/' . $paciente->id . '/edit') }}" class="btn btn-warning btn-sm">Editar</a>
+                            </td>
+                            <td>
+                                <form action="{{ url('pacientes/' . $paciente->id) }}" method="post">
                                     @method("Delete")
                                     @csrf
                                     <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>

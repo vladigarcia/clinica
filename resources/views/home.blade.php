@@ -1,6 +1,6 @@
 @extends('layout/template')
 
-@section('title', 'Página Principal | Clínica Juan Remedos')
+@section('title', 'Página Principal | Clínica  paso al infierno')
 
 @section('contenido')
     <main>
@@ -9,51 +9,41 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
-                            <h1 class="text-center">Bienvenido a Clínica Juan Remedos</h1>
+                            <h1 class="text-center" style="color: #3498db;">Bienvenido a Clínica paso al infierno</h1>
                             <hr>
-                            <h2 class="text-center">A cuál de nuestras plataformas desea ingresar</h2>
+                            <h2 class="text-center" style="color: #555;">A cuál de nuestras plataformas desea ingresar</h2>
                             <hr>
-                            <h3>Formulario Pacientes</h3>
-                            <a href="{{ url('/pacientes')}}" class="btn btn-primary btn-sm">Ingresar</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h2 class="text-center">Lista de espera</h2>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Encabezado 1</th>
-                                        <th>Encabezado 2</th>
-                                        <th>Encabezado 3</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Dato 1</td>
-                                        <td>Dato 2</td>
-                                        <td>Dato 3</td>
-                                    </tr>
-                                    <!-- Agrega más filas según tus necesidades -->
-                                </tbody>
-                            </table>
+                            <hr>
+                            <h2 class="text-center" style="color: #555;">No se preocupe,en la Clínica Paso al Infierno, el miedo es solo el comienzo</h2>
+                            <hr>
+                            <h3 style="color: #333;">Formulario Pacientes</h3>
+                            <a href="{{ url('/pacientes') }}" class="btn btn-primary btn-sm">Ingresar</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <style>
-        .card {
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin: 10px;
-        }
-        .card-body {
-            text-align: center;
-        }
-    </style>
+</style>
+<style>
+    .card {
+        border: 1px solid #3498db;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin: 10px;
+        background-color: #f9f9f9;
+        padding: 20px;
+    }
+
+    .card-body {
+        text-align: center;
+    }
+
+    .btn-primary {
+        background-color: #3498db;
+        border-color: #3498db;
+        color: #fff;
+    }
+</style>
+
 @endsection
