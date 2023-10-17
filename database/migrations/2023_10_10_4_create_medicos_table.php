@@ -12,10 +12,10 @@ return new class extends Migration
             $table->id();
             $table->string('nombre', 100);
             $table->string('telefono', 8);
-            $table->unsignedBigInteger('cod_clinica');
+            $table->unsignedBigInteger('clinica_id');
             $table->timestamps();
 
-            $table->foreign('cod_clinica')->references('id')->on('clinica');
+            $table->foreign('clinica_id')->references('id')->on('clinica');
         });
     }
     
