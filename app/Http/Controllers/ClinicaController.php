@@ -7,20 +7,15 @@ use Illuminate\Http\Request;
 
 class ClinicaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $clinicas = Clinica::all();
+        return view('clinicas.index', ['clinicas' => $clinicas]);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
+    
     public function create()
     {
-        //
+        return view('clinicas.index');
     }
 
     /**

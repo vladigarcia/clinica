@@ -1,6 +1,6 @@
 @extends('layouts/template')
 
-@section('title', 'Listado de Pacientes | Clínica Juan Remedo')
+@section('title', 'Listado de Pacientes | Clínica Juan Remedos')
 
 @section('contenido')
     <main>
