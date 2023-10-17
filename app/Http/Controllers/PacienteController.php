@@ -16,7 +16,7 @@ class PacienteController extends Controller
     
     public function create()
     {
-        return view('pacientes.create', ['pacientes' => Paciente::all()]);
+        return view('pacientes.create', ['generos' => Genero::all()]);
     }
     
     public function store(Request $request)
@@ -24,79 +24,62 @@ class PacienteController extends Controller
         $request->validate([
             'nombre' => 'required|max:50',
             'apellido' => 'required|max:50',
-            'dirección' => 'required|max:100',
-            'telefono' => 'required|',
-            'edad' => 'required|',
+            'direccion' => 'required|max:100',
+            'telefono' => 'required',
+            'edad' => 'required',
             'fecha_nacimiento' => 'required|date',
             'fecha_a' => 'required|date',
-            'genero' => 'required|'
+            'genero' => 'required'
         ]);
 
-        $pacientes = new Paciente();
-        $pacientes->nombre = $request->input('nombre');
-        $pacientes->apellido = $request->input('apellido');
-        $pacientes->direccion = $request->input('direccion');
-        $pacientes->telefono = $request->input('telefono');
-        $pacientes->edad = $request->input('edad');
-        $pacientes->fecha_nacimiento = $request->input('fecha_nacimiento');
-        $pacientes->fecha_a = $request->input('fecha_a');
-        $pacientes->genero_id = $request->input('genero');
-        $pacientes->save();
+        $paciente = new Paciente();
+        $paciente->nombre = $request->input('nombre');
+        $paciente->apellido = $request->input('apellido');
+        $paciente->direccion = $request->input('direccion');
+        $paciente->telefono = $request->input('telefono');
+        $paciente->edad = $request->input('edad');
+        $paciente->fecha_nacimiento = $request->input('fecha_nacimiento');
+        $paciente->fecha_a = $request->input('fecha_a');
+        $paciente->genero_id = $request->input('genero');
+        $paciente->save();
 
         return view("pacientes.message", ['msg' => 'Registro Guardado']);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Paciente $paciente)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Paciente $paciente)
+    public function edit($id)
     {
         $paciente = Paciente::find($id);
         return view('pacientes.edit', ['paciente' => $paciente, 'generos' => Genero::all()]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Paciente $paciente)
+    public function update(Request $request, $id)
     {
         $request->validate([
-            'nombre' => 'required|max:50'. $id,
+            'nombre' => 'required|max:50',
             'apellido' => 'required|max:50',
-            'dirección' => 'required|max:100',
-            'telefono' => 'required|',
-            'edad' => 'required|',
+            'direccion' => 'required|max:100',
+            'telefono' => 'required',
+            'edad' => 'required',
             'fecha_nacimiento' => 'required|date',
             'fecha_a' => 'required|date',
-            'genero' => 'required|'
+            'genero' => 'required'
         ]);
 
-        $pacientes = Paciente::find($id);
-        $pacientes->nombre = $request->input('nombre');
-        $pacientes->apellido = $request->input('apellido');
-        $pacientes->direccion = $request->input('direccion');
-        $pacientes->telefono = $request->input('telefono');
-        $pacientes->edad = $request->input('edad');
-        $pacientes->fecha_nacimiento = $request->input('fecha_nacimiento');
-        $pacientes->fecha_a = $request->input('fecha_a');
-        $pacientes->genero_id = $request->input('genero');
-        $pacientes->save();
+        $paciente = Paciente::find($id);
+        $paciente->nombre = $request->input('nombre');
+        $paciente->apellido = $request->input('apellido');
+        $paciente->direccion = $request->input('direccion');
+        $paciente->telefono = $request->input('telefono');
+        $paciente->edad = $request->input('edad');
+        $paciente->fecha_nacimiento = $request->input('fecha_nacimiento');
+        $paciente->fecha_a = $request->input('fecha_a');
+        $paciente->genero_id = $request->input('genero');
+        $paciente->save();
 
         return view("pacientes.message", ['msg' => 'Registro Actualizado/Modificado']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Paciente $paciente)
+    public function destroy($id)
     {
         $paciente = Paciente::find($id);
         $paciente->delete();
