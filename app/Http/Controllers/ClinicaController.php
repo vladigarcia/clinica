@@ -15,46 +15,63 @@ class ClinicaController extends Controller
     
     public function create()
     {
-        return view('clinicas.index');
+        return view('clinicas.create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
+    
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'cod_clinica' => 'required|',
+            'nombre' => 'required|max:100',
+            'telefono' => 'required',
+            'direccion' => 'required|max:100',
+        ]);
+
+        $clinica = new Clinica();
+        $clinica->cod_clinica = $request->input('cod_clinica');
+        $clinica->nombre = $request->input('nombre');
+        $clinica->telefono = $request->input('telefono');
+        $clinica->direccion = $request->input('direccion');
+        $clinica->save();
+
+        return view("clinicas.message", ['msg' => 'Registro Guardado']);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Clinica $clinica)
     {
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Clinica $clinica)
+    
+    public function edit($id)
     {
-        //
+        $clinica = Clinica::find($id);
+        return view('clinicas.edit', ['clinica' => $clinica]);
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Clinica $clinica)
+    
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'cod_clinica' => 'required|',
+            'nombre' => 'required|max:100',
+            'telefono' => 'required',
+            'direccion' => 'required|max:100',
+        ]);
+
+        $clinica = Clinica::find($id);
+        $clinica->cod_clinica = $request->input('cod_clinica');
+        $clinica->nombre = $request->input('nombre');
+        $clinica->telefono = $request->input('telefono');
+        $clinica->direccion = $request->input('direccion');
+        $clinica->save();
+
+        return view("clinicas.message", ['msg' => 'Registro Actualizado/Modificado']);
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Clinica $clinica)
+    
+    public function destroy($id)
     {
-        //
+        $clinica = Clinica::find($id);
+        $clinica->delete();
+
+        return redirect("clinicas");
     }
 }

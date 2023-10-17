@@ -23,10 +23,7 @@ return new class extends Migration
             $table->foreign('genero_id')->references('id')->on('generos');
         });
     }
-
-    /**
-     * Reverse the migrations.
-     */
+    
     public function down(): void
     {
         Schema::dropIfExists('pacientes');
