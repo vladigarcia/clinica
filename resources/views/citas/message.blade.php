@@ -1,6 +1,6 @@
 @extends('layouts/template')
 
-@section('title', 'Registrando Pacientes | Clinica Jóse Remedos')
+@section('title', 'Registrando citas | Clinica Jóse Remedos')
 
 @section('contenido')
 
@@ -9,7 +9,7 @@
 
             <h2>{{ $msg }}</h2>
 
-            <a href="{{ url('pacientes') }}" class="btn btn-secondary">Regresar</a>
+            <a href="{{ url('citas') }}" class="btn btn-secondary">Regresar</a>
             <br>
         </div>
     </main>
