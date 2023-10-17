@@ -1,13 +1,13 @@
 @extends('layouts/template')
 
-@section('title', 'Editando Pacientes | Clinica Jóse Remedos')
+@section('title', 'Editando citass | Clinica Jóse Remedos')
 
 @section('contenido')
 
     <main>
         <div class="container py-4">
 
-            <h2>Editando Paciente</h2>
+            <h2>Editando citas</h2>
             <br>
 
             @if ($errors->any())
@@ -22,74 +22,34 @@
                 
             @endif
 
-            <form action="{{ url( 'pacientes/'. $paciente->id ) }}" method="post">
+            <form action="{{ url( 'citas/'. $citas->id ) }}" method="post">
             
                 @method("PUT")
 
                 @csrf
 
                 <div class="mb-3 row">
-                    <label for="nombre" class="col-sm-2 col-form-label">Nombre:</label>
+                    <label for="id_medico" class="col-sm-2 col-form-label">id_medico:</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="nombre" id="nombre" value="{{ $paciente->nombre }}" required>
+                        <input type="text" class="form-control" name="id_medico" id="id_medico" value="{{ $citas->id_medico }}" required>
                     </div>
                 </div>
 
                 <div class="mb-3 row">
-                    <label for="apellido" class="col-sm-2 col-form-label">Apellido:</label>
+                    <label for="id_paciente" class="col-sm-2 col-form-label">id_paciente:</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="apellido" id="apellido" value="{{ $paciente->apellido }}" required>
-                    </div>
-                </div>
-
-                <div class="mb-3 row">
-                    <label for="direccion" class="col-sm-2 col-form-label">Dirección:</label>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control" name="direccion" id="direccion" value="{{ $paciente->direccion }}" required>
-                    </div>
-                </div>
-
-                <div class="mb-3 row">
-                    <label for="telefono" class="col-sm-2 col-form-label">Teléfono:</label>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control" name="telefono" id="telefono" value="{{ $paciente->telefono }}" required>
-                    </div>
-                </div>
-
-                <div class="mb-3 row">
-                    <label for="edad" class="col-sm-2 col-form-label">Edad:</label>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control" name="edad" id="edad" value="{{ $paciente->edad }}">
-                    </div>
-                </div>
-                
-                <div class="mb-3 row">
-                    <label for="genero" class="col-sm-2 col-form-label">Genero:</label>
-                    <div class="col-sm-5">
-                        <select name="genero" id="genero" class="form-select" required>
-                            <option value="">Seleccionar Genero</option>
-                            @foreach ($generos as $genero)
-                                <option value="{{ $genero->id }}" @if ($genero->id == $paciente->genero_id) {{ 'selected' }} @endif>{{ $genero->nombre }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-
-                <div class="mb-3 row">
-                    <label for="fecha_nacimiento" class="col-sm-2 col-form-label">Fecha de Nacimiento:</label>
-                    <div class="col-sm-5">
-                        <input type="date" class="form-control" name="fecha_nacimiento" id="fecha_nacimiento" value="{{ $paciente->fecha_nacimiento }}" required>
+                        <input type="text" class="form-control" name="id_paciente" id="id_paciente" value="{{ $citas->id_paciente }}" required>
                     </div>
                 </div>
 
                 <div class="mb-3 row">
                     <label for="fecha_a" class="col-sm-2 col-form-label">Fecha de Atención:</label>
                     <div class="col-sm-5">
-                        <input type="date" class="form-control" name="fecha_a" id="fecha_a" value="{{ $paciente->fecha_a }}" required>
+                        <input type="text" class="form-control" name="fecha_a" id="fecha_a" value="{{ $citas->fecha_a }}" required>
                     </div>
                 </div>
 
-                <a href="{{ url('pacientes')}}" class="btn btn-secondary">Regresar</a>
+                <a href="{{ url('citas')}}" class="btn btn-secondary">Regresar</a>
                 <button type="submit" class="btn btn-success">Guardar</button>
 
             </form>

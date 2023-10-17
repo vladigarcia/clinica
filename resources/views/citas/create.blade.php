@@ -22,49 +22,24 @@
                 
             @endif
 
-            <form action="{{ url( 'pacientes' ) }}" method="post">
+            <form action="{{ url( 'citas' ) }}" method="post">
 
                 @csrf
 
                 <div class="mb-3 row">
-                    <label for="nombre" class="col-sm-2 col-form-label">Nombre:</label>
+                    <label for="id_medico" class="col-sm-2 col-form-label">id_medico:</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="nombre" id="nombre" value="{{ old('nombre') }}" required>
+                        <input type="text" class="form-control" name="id_medico" id="id_medico" value="{{ old('id_medico') }}" required>
                     </div>
                 </div>
 
                 <div class="mb-3 row">
-                    <label for="apellido" class="col-sm-2 col-form-label">Apellido:</label>
+                    <label for="id_paciente" class="col-sm-2 col-form-label">id_paciente:</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="apellido" id="apellido" value="{{ old('apellido') }}" required>
+                        <input type="text" class="form-control" name="id_paciente" id="id_paciente" value="{{ old('id_paciente') }}" required>
                     </div>
                 </div>
 
-                <div class="mb-3 row">
-                    <label for="direccion" class="col-sm-2 col-form-label">Dirección:</label>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control" name="direccion" id="direccion" value="{{ old('direccion') }}" required>
-                    </div>
-                </div>
-                
-                <div class="mb-3 row">
-                    <label for="genero" class="col-sm-2 col-form-label">Genero:</label>
-                    <div class="col-sm-5">
-                        <select name="genero" id="genero" class="form-select" required>
-                            <option value="">Seleccionar Genero</option>
-                            @foreach ($generos as $genero)
-                                <option value="{{ $genero->id }}">{{ $genero->nombre }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-
-                <div class="mb-3 row">
-                    <label for="fecha_nacimiento" class="col-sm-2 col-form-label">Fecha de Nacimiento:</label>
-                    <div class="col-sm-5">
-                        <input type="date" class="form-control" name="fecha_nacimiento" id="fecha_nacimiento" value="{{ old('fecha_nacimiento') }}" required>
-                    </div>
-                </div>
 
                 <div class="mb-3 row">
                     <label for="fecha_a" class="col-sm-2 col-form-label">Fecha de Atención:</label>
@@ -73,7 +48,7 @@
                     </div>
                 </div>
 
-                <a href="{{ url('pacientes')}}" class="btn btn-secondary">Regresar</a>
+                <a href="{{ url('citas')}}" class="btn btn-secondary">Regresar</a>
                 <button type="submit" class="btn btn-success">Guardar</button>
 
             </form>

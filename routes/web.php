@@ -12,10 +12,10 @@ Route::get('/', function () {
 })->name('inicio');
 
 Route::resource( '/pacientes', PacienteController::class );
-Route::resource( '/medicos', MedicosController::class );
-Route::resource( '/horarios', HorariosController::class );
-Route::resource( '/clinicas', ClinicasController::class );
-Route::resource( '/citas', CitasController::class );  
+Route::resource( '/medicos', MedicoController::class );
+Route::resource( '/horarios', HorarioController::class );
+Route::resource( '/clinicas', ClinicaController::class );
+Route::resource( '/citas', CitaController::class );  
 
 Auth::routes();
 
