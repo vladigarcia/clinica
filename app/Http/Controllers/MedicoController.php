@@ -3,62 +3,72 @@
 namespace App\Http\Controllers;
 
 use App\Models\Medico;
+use App\Models\Clinica;
 use Illuminate\Http\Request;
 
 class MedicoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $medicos = Medico::all();
+        return view('medicos.index', ['medicos' => $medicos]);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
+    
     public function create()
     {
-        //
+        return view('medicos.create', ['clinicas' => Clinica::all()]);
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
+    
     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'id' => 'required|',
+            'nombre' => 'required|max:100',
+            'telefono' => 'required',
+            'cod_clinica' => 'required|',
+        ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Medico $medico)
+        $medico = new Medico();
+        $medico->id = $request->input('id');
+        $medico->nombre = $request->input('nombre');
+        $medico->telefono = $request->input('telefono');
+        $medico->cod_clinica = $request->input('cod_clinica');
+        $medico->save();
+
+        return view("medicos.message", ['msg' => 'Registro Guardado']);
+    }
+    
+    public function show($id)
     {
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Medico $medico)
+    
+    public function edit($id)
     {
-        //
+        $medico = Medico::find($id);
+        return view('medicos.edit', ['medico' => $medico]);
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Medico $medico)
+    
+    public function update(Request $request, $id)
     {
-        //
-    }
+        $request->validate([
+            'id' => 'required|',
+            'nombre' => 'required|max:100',
+            'telefono' => 'required',
+            'cod_clinica' => 'required|',
+        ]);
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Medico $medico)
+        $medico = Medico::find($id);
+        $medico->id = $request->input('id');
+        $medico->nombre = $request->input('nombre');
+        $medico->telefono = $request->input('telefono');
+        $medico->cod_clinica = $request->input('cod_clinica');
+        $medico->save();
+
+        return view("medicos.message", ['msg' => 'Registro Guardado']);
+    }
+    
+    public function destroy($id)
     {
         //
     }

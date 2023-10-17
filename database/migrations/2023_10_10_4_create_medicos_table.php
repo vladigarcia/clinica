@@ -9,11 +9,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('medicos', function (Blueprint $table) {
-            $table->id('id_medico');
+            $table->id();
             $table->string('nombre', 100);
             $table->string('telefono', 8);
             $table->unsignedBigInteger('cod_clinica');
             $table->timestamps();
+
+            $table->foreign('cod_clinica')->references('id')->on('clinica');
         });
     }
     

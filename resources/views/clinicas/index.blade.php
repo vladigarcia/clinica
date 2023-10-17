@@ -21,15 +21,15 @@
                 <tbody>
                     @foreach ($clinicas as $clinica)
                         <tr>
-                            <td>{{ $clinica->cod_clinica }}</td>
+                            <td>{{ $clinica->id }}</td>
                             <td>{{ $clinica->nombre }}</td>
                             <td>{{ $clinica->telefono }}</td>
                             <td>{{ $clinica->direccion }}</td>
                             <td>
-                                <a href="{{ url('clinica/' . $paciente->id . '/edit') }}" class="btn btn-warning btn-sm">Editar</a>
+                                <a href="{{ url('clinica/' . $clinica->id . '/edit') }}" class="btn btn-warning btn-sm">Editar</a>
                             </td>
                             <td>
-                                <form action="{{ url('clinica/' . $paciente->id) }}" method="post">
+                                <form action="{{ url('clinica/' . $clinica->id) }}" method="post">
                                     @method("Delete")
                                     @csrf
                                     <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
