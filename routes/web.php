@@ -17,3 +17,7 @@ Route::resource( '/horarios', HorariosController::class );
 Route::resource( '/clinicas', ClinicasController::class );
 Route::resource( '/citas', CitasController::class );
     
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
