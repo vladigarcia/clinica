@@ -18,6 +18,15 @@
                         <hr>
                         <h3 style="color: #333;">Formulario Clinicas</h3>
                         <a href="{{ url('/clinicas') }}" class="btn btn-primary btn-sm">Ingresar<a>
+                        <hr>
+                        <h3 style="color: #333;">Formulario Medicos</h3>
+                        <a href="{{ url('/medicos') }}" class="btn btn-primary btn-sm">Ingresar<a>
+                        <hr>
+                        <h3 style="color: #333;">Formulario Citas</h3>
+                        <a href="{{ url('/citas') }}" class="btn btn-primary btn-sm">Ingresar<a>
+                        <hr>
+                        <h3 style="color: #333;">Formulario Horarios</h3>
+                        <a href="{{ url('/horarios') }}" class="btn btn-primary btn-sm">Ingresar<a>
                     </div>
                 </div>
             </div>
