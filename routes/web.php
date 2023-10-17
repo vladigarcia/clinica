@@ -8,7 +8,7 @@ use App\Http\Controllers\CitaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('home');
+    return view('inicio');
 })->name('inicio');
 
 Route::resource( '/pacientes', PacienteController::class );
