@@ -1,30 +1,26 @@
 @extends('layout/template')
 
-@section('title', 'Página Principal | Clínica  paso al infierno')
+@section('title', 'Página Principal | Clínica José Remedos')
 
 @section('contenido')
-    <main>
-        <div class="container py-4">
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h1 class="text-center" style="color: #3498db;">Bienvenido a Clínica paso al infierno</h1>
-                            <hr>
-                            <h2 class="text-center" style="color: #555;">A cuál de nuestras plataformas desea ingresar</h2>
-                            <hr>
-                            <hr>
-                            <h2 class="text-center" style="color: #555;">No se preocupe,en la Clínica Paso al Infierno, el miedo es solo el comienzo</h2>
-                            <hr>
-                            <h3 style="color: #333;">Formulario Pacientes</h3>
-                            <a href="{{ url('/pacientes') }}" class="btn btn-primary btn-sm">Ingresar</a>
-                        </div>
+<main>
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="text-center" style="color: #3498db;">Bienvenido a la Clinica José Remedos</h1>
+                        <hr>
+                        <h2 class="text-center" style="color: #555;">A cuál de nuestras plataformas desea ingresar?</h2>
+                        <hr>
+                        <h3 style="color: #333;">Formulario Pacientes</h3>
+                        <a href="{{ url('/pacientes') }}" class="btn btn-primary btn-sm">Ingresar<a>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
-</style>
+    </div>
+</main>
 <style>
     .card {
         border: 1px solid #3498db;
