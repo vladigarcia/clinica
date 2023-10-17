@@ -9,7 +9,7 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
-                        <h1 class="text-center" style="color: #3498db;">Bienvenido a la Clinica José Remedos</h1>
+                        <h1 class="text-center" style="color: #3498db;">Bienvenido a la Clinica Puerta al infierno</h1>
                         <hr>
                         <h2 class="text-center" style="color: #555;">A cuál de nuestras plataformas desea ingresar?</h2>
                         <hr>
