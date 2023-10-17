@@ -63,32 +63,32 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="{{url('')}}" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Medicos</a>
                             <div class="dropdown-menu" aria-labelledby="dropdownId">
-                                <a class "dropdown-item" href="#">Ver</a>
-                                <a class="dropdown-item" href="#">Agregar</a>
+                                <a class="dropdown-item" href="{{route('medicos.index')}}">Ver</a>
+                                <a class="dropdown-item" href="{{route('medicos.create')}}">Agregar</a>
                             </div>
                         </li>
                         <!-- Horarios -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="{{url('')}}" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Horarios</a>
                             <div class="dropdown-menu" aria-labelledby="dropdownId">
-                                <a class="dropdown-item" href="#">Ver</a>
-                                <a class="dropdown-item" href="#">Agregar</a>
+                                <a class="dropdown-item" href="{{route('horarios.index')}}">Ver</a>
+                                <a class="dropdown-item" href="{{route('horarios.create')}}">Agregar</a>
                             </div>
                         </li>
                         <!-- Clinicas -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="{{url('')}}" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clinicas</a>
                             <div class="dropdown-menu" aria-labelledby="dropdownId">
-                                <a class="dropdown-item" href="#">Ver</a>
-                                <a class="dropdown-item" href="#">Agregar</a>
+                                <a class="dropdown-item" href="{{route('clinicas.index')}}">Ver</a>
+                                <a class="dropdown-item" href="{{route('clinicas.create')}}">Agregar</a>
                             </div>
                         </li>
                         <!-- Citas -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="{{url('')}}" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Citas</a>
                             <div class="dropdown-menu" aria-labelledby="dropdownId">
-                                <a class="dropdown-item" href="#">Ver</a>
-                                <a class="dropdown-item" href="#">Agregar</a>
+                                <a class="dropdown-item" href="{{route('citas.index')}}">Ver</a>
+                                <a class="dropdown-item" href="{{route('citas.create')}}">Agregar</a>
                             </div>
                         </li>
                     </ul>
