@@ -8,26 +8,17 @@ use Illuminate\Http\Request;
 
 class PacienteController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $pacientes = Paciente::all();
         return view('pacientes.index', ['pacientes' => $pacientes]);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
+    
     public function create()
     {
         return view('pacientes.create', ['pacientes' => Paciente::all()]);
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
+    
     public function store(Request $request)
     {
         $request->validate([
