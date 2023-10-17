@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('citas', function (Blueprint $table) {
             $table->id();
+            $table->string('id_medico', 50);
+            $table->string('id_paciente', 50);
+            $table->date('fecha_a', 8);
             $table->timestamps();
         });
     }
