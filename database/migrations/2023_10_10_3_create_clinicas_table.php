@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('clinicas', function (Blueprint $table) {
             $table->id('cod_clinica', 10);
             $table->string('nombre', 100);
-            $table->int('telefono', 8);
+            $table->string('telefono', 8);
             $table->string('direccion', 100);
             $table->timestamps();
         });
