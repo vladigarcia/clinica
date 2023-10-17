@@ -18,7 +18,7 @@
                         <th>Teléfono</th>
                         <th>Edad</th>
                         <th>Fecha de Nacimiento</th>
-                        <th>Fecha A</th>
+                        <th>Fecha de Atención</th>
                         <th></th>
                         <th></th>
                     </tr>

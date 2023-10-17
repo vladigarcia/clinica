@@ -67,7 +67,7 @@
                         <select name="genero" id="genero" class="form-select" required>
                             <option value="">Seleccionar Genero</option>
                             @foreach ($generos as $genero)
-                                <option value="{{ $genero->id }}" @if ($genero->id == $paciente->genero_id) {{ 'selected' }} @endif>{{ $genero->nombre }}</option>
+                                <option value="{{ $genero->id }}">{{ $genero->nombre }}</option>
                             @endforeach
                         </select>
                     </div>

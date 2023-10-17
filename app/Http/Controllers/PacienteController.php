@@ -69,7 +69,7 @@ class PacienteController extends Controller
     public function update(Request $request, Paciente $paciente)
     {
         $request->validate([
-            'nombre' => 'required|max:50',
+            'nombre' => 'required|max:50'. $id,
             'apellido' => 'required|max:50',
             'dirección' => 'required|max:100',
             'telefono' => 'required|',
