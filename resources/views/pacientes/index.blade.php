@@ -30,7 +30,7 @@
                             <td>{{ $paciente->nombre }}</td>
                             <td>{{ $paciente->apellido }}</td>
                             <td>{{ $paciente->direccion }}</td>
-                            <td>{{ $paciente->genero->nombre }}</td>
+                            <td>{{ $paciente->genero_id }}</td>
                             <td>{{ $paciente->telefono }}</td>
                             <td>{{ $paciente->edad }}</td>
                             <td>{{ $paciente->fecha_nacimiento }}</td>

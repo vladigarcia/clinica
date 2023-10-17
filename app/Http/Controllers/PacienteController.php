@@ -22,7 +22,7 @@ class PacienteController extends Controller
      */
     public function create()
     {
-        return view('pacientes.create', ['niveles' => Nivel::all()]);
+        return view('pacientes.create', ['pacientes' => Paciente::all()]);
     }
 
     /**
