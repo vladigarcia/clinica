@@ -14,11 +14,11 @@
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>Dirección</th>
+                        <th>Género</th>
                         <th>Teléfono</th>
                         <th>Edad</th>
                         <th>Fecha de Nacimiento</th>
                         <th>Fecha A</th>
-                        <th>Género ID</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -30,11 +30,11 @@
                             <td>{{ $paciente->nombre }}</td>
                             <td>{{ $paciente->apellido }}</td>
                             <td>{{ $paciente->direccion }}</td>
+                            <td>{{ $paciente->genero->nombre }}</td>
                             <td>{{ $paciente->telefono }}</td>
                             <td>{{ $paciente->edad }}</td>
                             <td>{{ $paciente->fecha_nacimiento }}</td>
                             <td>{{ $paciente->fecha_a }}</td>
-                            <td>{{ $paciente->genero_id }}</td>
                             <td>
                                 <a href="{{ url('pacientes/' . $paciente->id . '/edit') }}" class="btn btn-warning btn-sm">Editar</a>
                             </td>
