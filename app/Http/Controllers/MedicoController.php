@@ -22,17 +22,15 @@ class MedicoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id' => 'required|',
             'nombre' => 'required|max:100',
             'telefono' => 'required',
-            'cod_clinica' => 'required|',
+            'clinica_id' => 'required|',
         ]);
 
         $medico = new Medico();
-        $medico->id = $request->input('id');
         $medico->nombre = $request->input('nombre');
         $medico->telefono = $request->input('telefono');
-        $medico->cod_clinica = $request->input('cod_clinica');
+        $medico->clinica_id = $request->input('clinica');
         $medico->save();
 
         return view("medicos.message", ['msg' => 'Registro Guardado']);
@@ -52,17 +50,15 @@ class MedicoController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'id' => 'required|',
             'nombre' => 'required|max:100',
             'telefono' => 'required',
-            'cod_clinica' => 'required|',
+            'clinica_id' => 'required|',
         ]);
 
         $medico = Medico::find($id);
-        $medico->id = $request->input('id');
         $medico->nombre = $request->input('nombre');
         $medico->telefono = $request->input('telefono');
-        $medico->cod_clinica = $request->input('cod_clinica');
+        $medico->clinica_id = $request->input('clinica');
         $medico->save();
 
         return view("medicos.message", ['msg' => 'Registro Guardado']);
