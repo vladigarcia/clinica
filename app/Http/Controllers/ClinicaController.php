@@ -21,14 +21,12 @@ class ClinicaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id' => 'required|',
             'nombre' => 'required|max:100',
-            'telefono' => 'required',
+            'telefono' => 'required|',
             'direccion' => 'required|max:100',
         ]);
 
         $clinica = new Clinica();
-        $clinica->id = $request->input('id');
         $clinica->nombre = $request->input('nombre');
         $clinica->telefono = $request->input('telefono');
         $clinica->direccion = $request->input('direccion');
@@ -51,14 +49,12 @@ class ClinicaController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'id' => 'required|',
             'nombre' => 'required|max:100',
-            'telefono' => 'required',
+            'telefono' => 'required|',
             'direccion' => 'required|max:100',
         ]);
 
         $clinica = Clinica::find($id);
-        $clinica->id = $request->input('id');
         $clinica->nombre = $request->input('nombre');
         $clinica->telefono = $request->input('telefono');
         $clinica->direccion = $request->input('direccion');

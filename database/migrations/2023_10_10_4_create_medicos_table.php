@@ -11,11 +11,11 @@ return new class extends Migration
         Schema::create('medicos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre', 100);
-            $table->string('telefono', 8); // Corregido el tipo de dato y la longitud.
+            $table->string('telefono', 8);
             $table->unsignedBigInteger('clinica_id');
             $table->timestamps();
 
-            $table->foreign('clinica_id')->references('id')->on('clinicas'); // Corregido el nombre de la tabla de referencia.
+            $table->foreign('clinica_id')->references('id')->on('clinicas');
         });
     }
     

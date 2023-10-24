@@ -23,8 +23,8 @@ class MedicoController extends Controller
     {
         $request->validate([
             'nombre' => 'required|max:100',
-            'telefono' => 'required',
-            'clinica_id' => 'required|',
+            'telefono' => 'required|',
+            'clinica_id' => 'required',
         ]);
 
         $medico = new Medico();
@@ -51,8 +51,8 @@ class MedicoController extends Controller
     {
         $request->validate([
             'nombre' => 'required|max:100',
-            'telefono' => 'required',
-            'clinica_id' => 'required|',
+            'telefono' => 'required|',
+            'clinica_id' => 'required',
         ]);
 
         $medico = Medico::find($id);
@@ -66,6 +66,9 @@ class MedicoController extends Controller
     
     public function destroy($id)
     {
-        //
+        $medico = Medico::find($id);
+        $medico->delete();
+
+        return redirect("medicos");
     }
 }
