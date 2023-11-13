@@ -36,7 +36,7 @@
                 <div class="mb-3 row">
                     <label for="apellido" class="col-sm-2 col-form-label">Apellido:</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="apellido" id="apellido" value="{{ old('apellido') }}" required>
+                        <input type="text" class="form-control" name="apellido" id="apellido" value="{{ old('apellido') }}" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+"title="Solo se permiten letras y espacios" required>
                     </div>
                 </div>
 
@@ -50,14 +50,14 @@
                 <div class="mb-3 row">
                     <label for="telefono" class="col-sm-2 col-form-label">Teléfono:</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="telefono" id="telefono" value="{{ old('telefono') }}" required>
+                        <input type="num" class="form-control" name="telefono" id="telefono" value="{{ old('telefono') }}" required>
                     </div>
                 </div>
 
                 <div class="mb-3 row">
                     <label for="edad" class="col-sm-2 col-form-label">Edad:</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="edad" id="edad" value="{{ old('edad') }}" required>
+                        <input type="int" class="form-control" name="edad" id="edad" value="{{ old('edad') }}" required>
                     </div>
                 </div>
                 

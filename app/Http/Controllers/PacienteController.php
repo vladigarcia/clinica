@@ -25,8 +25,8 @@ class PacienteController extends Controller
             'nombre' => 'required|max:50',
             'apellido' => 'required|max:50',
             'direccion' => 'required|max:100',
-            'telefono' => 'required',
-            'edad' => 'required',
+            'telefono' => 'required|int',
+            'edad' => 'required|int',
             'fecha_nacimiento' => 'required|date',
             'fecha_a' => 'required|date',
             'genero' => 'required'
