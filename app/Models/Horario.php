@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Horario extends Model
 {
     use HasFactory;
+    public function medico()
+    {
+        return $this->belongsTo(Medico::class, 'medico_id', 'id');
+    }
 }

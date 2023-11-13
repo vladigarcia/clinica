@@ -102,7 +102,7 @@
     </main>
 
     <footer class="footer">
-        Esta página se editó por última vez el 16/Oct/2023 a las 20:50.<br/>
+        Esta página se editó por última vez el 13/Nov/2023 a las 20:50.<br/>
         El contenido está disponible bajo la licencia de Jairo y Vladimir
     </footer>
 

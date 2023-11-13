@@ -3,62 +3,53 @@
 namespace App\Http\Controllers;
 
 use App\Models\Horario;
+use App\Models\Clinica;
+use App\Models\Medico;
 use Illuminate\Http\Request;
 
 class HorarioController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $horarios = Horario::all();
         return view('horarios.index', ['horarios' => $horarios]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('horarios.create', ['medicos' => Medico::all()]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'medico_id' => 'required',
+            'fecha_hora' => 'required',
+        ]);
+
+        $horario = new Horario();
+        $horario->medico_id = $request->input('medico_id');
+        $horario->fecha_hora = $request->input('fecha_hora');
+        $horario->save();
+
+        return view("medicos.message", ['msg' => 'Registro Guardado']);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Horario $horario)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Horario $horario)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Horario $horario)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Horario $horario)
     {
         //
