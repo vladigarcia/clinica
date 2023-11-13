@@ -30,7 +30,7 @@ class MedicoController extends Controller
         $medico = new Medico();
         $medico->nombre = $request->input('nombre');
         $medico->telefono = $request->input('telefono');
-        $medico->clinica_id = $request->input('clinica');
+        $medico->clinica_id = $request->input('clinica_id');
         $medico->save();
 
         return view("medicos.message", ['msg' => 'Registro Guardado']);
@@ -44,7 +44,8 @@ class MedicoController extends Controller
     public function edit($id)
     {
         $medico = Medico::find($id);
-        return view('medicos.edit', ['medico' => $medico]);
+        $clinicas = Clinica::all();
+        return view('medicos.edit', ['medico' => $medico, 'clinicas' => $clinicas]);
     }
     
     public function update(Request $request, $id)
@@ -58,7 +59,7 @@ class MedicoController extends Controller
         $medico = Medico::find($id);
         $medico->nombre = $request->input('nombre');
         $medico->telefono = $request->input('telefono');
-        $medico->clinica_id = $request->input('clinica');
+        $medico->clinica_id = $request->input('clinica_id');
         $medico->save();
 
         return view("medicos.message", ['msg' => 'Registro Guardado']);

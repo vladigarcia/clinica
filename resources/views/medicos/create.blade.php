@@ -41,9 +41,9 @@
                 </div>
                 
                 <div class="mb-3 row">
-                    <label for="clinica" class="col-sm-2 col-form-label">Clinica:</label>
+                    <label for="clinica_id" class="col-sm-2 col-form-label">Clinica:</label>
                     <div class="col-sm-5">
-                        <select name="clinica" id="clinica" class="form-select" required>
+                        <select name="clinica_id" id="clinica" class="form-select">
                             <option value="">Seleccionar Clinica</option>
                             @foreach ($clinicas as $clinica)
                                 <option value="{{ $clinica->id }}">{{ $clinica->nombre }}</option>
