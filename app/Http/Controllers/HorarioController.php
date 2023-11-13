@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Horario;
-use App\Models\Clinica;
 use App\Models\Medico;
 use Illuminate\Http\Request;
 
@@ -24,12 +23,16 @@ class HorarioController extends Controller
     {
         $request->validate([
             'medico_id' => 'required',
-            'fecha_hora' => 'required',
+            'dia_trabajo' => 'required',
+            'hora_e' => 'required',
+            'hora_s' => 'required',
         ]);
 
         $horario = new Horario();
         $horario->medico_id = $request->input('medico_id');
-        $horario->fecha_hora = $request->input('fecha_hora');
+        $horario->dia_trabajo = $request->input('dia_trabajo');
+        $horario->hora_e = $request->input('hora_e');
+        $horario->hora_s = $request->input('hora_s');
         $horario->save();
 
         return view("medicos.message", ['msg' => 'Registro Guardado']);
@@ -42,16 +45,35 @@ class HorarioController extends Controller
 
     public function edit(Horario $horario)
     {
-        //
+        $horario = Horario::find($id);
+        $medico = Medico::all();
+        return view('horario$horarios.edit', ['horario' => $horario, 'medico' => $medico]);
     }
 
     public function update(Request $request, Horario $horario)
     {
-        //
+        $request->validate([
+            'medico_id' => 'required',
+            'dia_trabajo' => 'required',
+            'hora_e' => 'required',
+            'hora_s' => 'required',
+        ]);
+
+        $horario = Horario::find($id);
+        $horario->medico_id = $request->input('medico_id');
+        $horario->dia_trabajo = $request->input('dia_trabajo');
+        $horario->hora_e = $request->input('hora_e');
+        $horario->hora_s = $request->input('hora_s');
+        $horario->save();
+
+        return view("medicos.message", ['msg' => 'Registro Actualizado']);
     }
 
     public function destroy(Horario $horario)
     {
-        //
+        $horario = Horario::find($id);
+        $horario->delete();
+
+        return redirect("horarios");
     }
 }

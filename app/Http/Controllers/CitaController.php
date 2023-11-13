@@ -21,7 +21,7 @@ class CitaController extends Controller
      */
     public function create()
     {
-        return view('citas.create');
+        return view('citas.create', ['medicos' => Medico::all()], ['pacientes' => Paciente::all()]);
     }
 
     /**
@@ -29,7 +29,19 @@ class CitaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'medico_id' => 'required',
+            'paciente_id' => 'required',
+            'fecha_a' => 'required',
+        ]);
+
+        $horario = new Horario();
+        $horario->medico_id = $request->input('medico_id');
+        $horario->paciente_id = $request->input('paciente_id');
+        $horario->fecha_a = $request->input('fecha_a');
+        $horario->save();
+
+        return view("medicos.message", ['msg' => 'Registro Guardado']);
     }
 
     /**
@@ -45,15 +57,27 @@ class CitaController extends Controller
      */
     public function edit(Cita $cita)
     {
-        //
+        $cita = Cita::find($id);
+        $medico = Medico::all();
+        $paciente = Paciente::all();
+        return view('cita$citas.edit', ['cita' => $cita, 'medico' => $medico, 'paciente' => $paciente]);
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
+    
     public function update(Request $request, Cita $cita)
     {
-        //
+        $request->validate([
+            'medico_id' => 'required',
+            'paciente_id' => 'required',
+            'fecha_a' => 'required',
+        ]);
+
+        $horario = Horario::find($id);
+        $horario->medico_id = $request->input('medico_id');
+        $horario->paciente_id = $request->input('paciente_id');
+        $horario->fecha_a = $request->input('fecha_a');
+        $horario->save();
+
+        return view("medicos.message", ['msg' => 'Registro Actualicado']);
     }
 
     /**
@@ -61,6 +85,9 @@ class CitaController extends Controller
      */
     public function destroy(Cita $cita)
     {
-        //
+        $cita = Cita::find($id);
+        $cita->delete();
+
+        return redirect("citas");
     }
 }

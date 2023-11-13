@@ -22,7 +22,7 @@ class ClinicaController extends Controller
     {
         $request->validate([
             'nombre' => 'required|max:100',
-            'telefono' => 'required|',
+            'telefono' => 'required|max:8',
             'direccion' => 'required|max:100',
         ]);
 
@@ -50,7 +50,7 @@ class ClinicaController extends Controller
     {
         $request->validate([
             'nombre' => 'required|max:100',
-            'telefono' => 'required|',
+            'telefono' => 'required|max:8',
             'direccion' => 'required|max:100',
         ]);
 

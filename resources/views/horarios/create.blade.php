@@ -25,18 +25,22 @@
             <form action="{{ url( 'horarios' ) }}" method="post">
 
                 @csrf
-
                 <div class="mb-3 row">
-                    <label for="id_medico" class="col-sm-2 col-form-label">id_medico:</label>
+                    <label for="medico_id" class="col-sm-2 col-form-label">Id Medico:</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="id_medico" id="id_medico" value="{{ old('id_medico') }}" required>
+                    <select name="clinica_id" id="clinica" class="form-select">
+                        <option value="">Seleccionar Médico</option>
+                        @foreach ($clinicas as $clinica)
+                            <option value="{{ $clinica->id }}">{{ $clinica->nombre }}</option>
+                        @endforeach
+                    </select>
                     </div>
                 </div>
 
                 <div class="mb-3 row">
-                    <label for="fecha_hora" class="col-sm-2 col-form-label">fecha_hora:</label>
+                    <label for="fecha_hora" class="col-sm-2 col-form-label">Fecha y Hora de Trabajo</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="fecha_hora" id="fecha_hora" value="{{ old('fecha_hora') }}" required>
+                        <input type="date" class="form-control" name="fecha_hora" id="fecha_hora" value="{{ old('fecha_hora') }}" required>
                     </div>
                 </div>
 
