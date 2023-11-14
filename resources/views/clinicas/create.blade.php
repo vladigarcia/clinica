@@ -1,6 +1,8 @@
-@extends('layouts/template')
+<!-- resources/views/clinicas/create.blade.php -->
 
-@section('title', 'Registrando Clinicas | Clinica Jóse Remedos')
+@extends('layouts.template')
+
+@section('title', 'Registrando Clinicas | Clinica José Remedos')
 
 @section('contenido')
 
@@ -19,10 +21,9 @@
                     </ul>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-                
             @endif
 
-            <form action="{{ url( 'clinicas' ) }}" method="post">
+            <form action="{{ url('clinicas') }}" method="post">
 
                 @csrf
 
@@ -33,23 +34,13 @@
                     </div>
                 </div>
 
-                <div class="mb-3 row">
-                    <label for="telefono" class="col-sm-2 col-form-label">Teléfono:</label>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control" name="telefono" id="telefono" value="{{ old('telefono') }}" required>
-                    </div>
-                </div>
+                <!-- Add similar sections for telefono and direccion -->
 
-                <div class="mb-3 row">
-                    <label for="direccion" class="col-sm-2 col-form-label">Dirección:</label>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control" name="direccion" id="direccion" value="{{ old('direccion') }}" required>
-                    </div>
-                </div>
-
-                <a href="{{ url('clinicas')}}" class="btn btn-secondary">Regresar</a>
+                <a href="{{ url('clinicas') }}" class="btn btn-secondary">Regresar</a>
                 <button type="submit" class="btn btn-success">Guardar</button>
 
             </form>
         </div>
     </main>
+
+@endsection

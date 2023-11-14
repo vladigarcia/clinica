@@ -19,21 +19,20 @@
                     </ul>
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-                
             @endif
 
-            <form action="{{ url( 'horarios' ) }}" method="post">
+            <form action="{{ url('horarios') }}" method="post">
 
                 @csrf
                 <div class="mb-3 row">
                     <label for="medico_id" class="col-sm-2 col-form-label">Id Medico:</label>
                     <div class="col-sm-5">
-                    <select name="clinica_id" id="clinica" class="form-select">
-                        <option value="">Seleccionar Médico</option>
-                        @foreach ($clinicas as $clinica)
-                            <option value="{{ $clinica->id }}">{{ $clinica->nombre }}</option>
-                        @endforeach
-                    </select>
+                        <select name="horarios_id" id="horarios" class="form-select">
+                            <option value="">Seleccionar Médico</option>
+                            @foreach ($medicos as $medico)
+                                <option value="{{ $medico->id }}">{{ $medico->nombre }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
 
@@ -44,9 +43,10 @@
                     </div>
                 </div>
 
-                <a href="{{ url('horarios')}}" class="btn btn-secondary">Regresar</a>
+                <a href="{{ url('horarios') }}" class="btn btn-secondary">Regresar</a>
                 <button type="submit" class="btn btn-success">Guardar</button>
 
             </form>
         </div>
     </main>
+@endsection

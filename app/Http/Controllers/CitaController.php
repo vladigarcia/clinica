@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cita;
+use App\Models\Medico;
+use App\Models\Paciente;
 use Illuminate\Http\Request;
 
 class CitaController extends Controller
@@ -35,11 +37,11 @@ class CitaController extends Controller
             'fecha_a' => 'required',
         ]);
 
-        $horario = new Horario();
-        $horario->medico_id = $request->input('medico_id');
-        $horario->paciente_id = $request->input('paciente_id');
-        $horario->fecha_a = $request->input('fecha_a');
-        $horario->save();
+        $cita = new Cita();
+        $cita->medico_id = $request->input('medico_id');
+        $cita->paciente_id = $request->input('paciente_id');
+        $cita->fecha_a = $request->input('fecha_a');
+        $cita->save();
 
         return view("medicos.message", ['msg' => 'Registro Guardado']);
     }
@@ -57,10 +59,9 @@ class CitaController extends Controller
      */
     public function edit(Cita $cita)
     {
-        $cita = Cita::find($id);
-        $medico = Medico::all();
-        $paciente = Paciente::all();
-        return view('cita$citas.edit', ['cita' => $cita, 'medico' => $medico, 'paciente' => $paciente]);
+        $medicos = Medico::all();
+        $pacientes = Paciente::all();
+        return view('citas.edit', ['cita' => $cita, 'medicos' => $medicos, 'pacientes' => $pacientes]);
     }
     
     public function update(Request $request, Cita $cita)
@@ -71,13 +72,12 @@ class CitaController extends Controller
             'fecha_a' => 'required',
         ]);
 
-        $horario = Horario::find($id);
-        $horario->medico_id = $request->input('medico_id');
-        $horario->paciente_id = $request->input('paciente_id');
-        $horario->fecha_a = $request->input('fecha_a');
-        $horario->save();
+        $cita->medico_id = $request->input('medico_id');
+        $cita->paciente_id = $request->input('paciente_id');
+        $cita->fecha_a = $request->input('fecha_a');
+        $cita->save();
 
-        return view("medicos.message", ['msg' => 'Registro Actualicado']);
+        return view("medicos.message", ['msg' => 'Registro Actualizado']);
     }
 
     /**
@@ -85,7 +85,6 @@ class CitaController extends Controller
      */
     public function destroy(Cita $cita)
     {
-        $cita = Cita::find($id);
         $cita->delete();
 
         return redirect("citas");
