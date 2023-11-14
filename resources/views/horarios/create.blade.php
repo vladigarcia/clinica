@@ -25,9 +25,9 @@
 
                 @csrf
                 <div class="mb-3 row">
-                    <label for="medico_id" class="col-sm-2 col-form-label">Id Medico:</label>
+                    <label for="medico_id" class="col-sm-2 col-form-label">Medico:</label>
                     <div class="col-sm-5">
-                        <select name="horarios_id" id="horarios" class="form-select">
+                        <select name="medico_id" id="horarios" class="form-select">
                             <option value="">Seleccionar Médico</option>
                             @foreach ($medicos as $medico)
                                 <option value="{{ $medico->id }}">{{ $medico->nombre }}</option>
@@ -37,9 +37,23 @@
                 </div>
 
                 <div class="mb-3 row">
-                    <label for="fecha_hora" class="col-sm-2 col-form-label">Fecha y Hora de Trabajo</label>
+                    <label for="dia_trabajo" class="col-sm-2 col-form-label">Día de Trabajo:</label>
                     <div class="col-sm-5">
-                        <input type="date" class="form-control" name="fecha_hora" id="fecha_hora" value="{{ old('fecha_hora') }}" required>
+                        <input type="date" class="form-control" name="dia_trabajo" id="dia_trabajo" value="{{ old('dia_trabajo') }}" required>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label for="hora_e" class="col-sm-2 col-form-label">Hora de Entrada:</label>
+                    <div class="col-sm-5">
+                        <input type="time" class="form-control" name="hora_e" id="hora_e" value="{{ old('hora_e') }}" required>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label for="hora_s" class="col-sm-2 col-form-label">Hora de Salida:</label>
+                    <div class="col-sm-5">
+                        <input type="time" class="form-control" name="hora_s" id="hora_s" value="{{ old('hora_s') }}" required>
                     </div>
                 </div>
 
