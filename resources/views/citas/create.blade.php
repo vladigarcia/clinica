@@ -7,7 +7,7 @@
     <main>
         <div class="container py-4">
 
-            <h2>Registrando Paciente</h2>
+            <h2>Agendando Cita</h2>
             <br>
 
             @if ($errors->any())
