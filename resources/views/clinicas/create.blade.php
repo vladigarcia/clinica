@@ -34,6 +34,20 @@
                     </div>
                 </div>
 
+                <div class="mb-3 row">
+                    <label for="telefono" class="col-sm-2 col-form-label">Teléfono:</label>
+                    <div class="col-sm-5">
+                        <input type="num" class="form-control" name="telefono" id="telefono" value="{{ old('telefono') }}" required>
+                    </div>
+                </div>
+
+                <div class="mb-3 row">
+                    <label for="direccion" class="col-sm-2 col-form-label">Dirección:</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" name="direccion" id="direccion" value="{{ old('direccion') }}" required>
+                    </div>
+                </div>
+
                 <!-- Add similar sections for telefono and direccion -->
 
                 <a href="{{ url('clinicas') }}" class="btn btn-secondary">Regresar</a>
