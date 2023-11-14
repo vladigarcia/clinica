@@ -12,17 +12,20 @@
                     <tr>
                         <th>#</th>
                         <th>ID_MEDICO</th>
-                        <th>FECHA HORA DE TRABAJO</th>
-                        <th></th>
-                        <th></th>
+                        <th>DÍA DE TRABAJO</th>
+                        <th>HORA DE ENTRADA</th>
+                        <th>HORA DE SALIDA</th>
+                        <th colspan="2">Funciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($horarios as $horario)
                         <tr>
                             <td>{{ $horario->id }}</td>
-                            <td>{{ $horario->id_medico }}</td>
-                            <td>{{ $horario->fecha_hora }}</td>
+                            <td>{{ $horario->medico_id }}</td>
+                            <td>{{ $horario->dia_trabajo }}</td>
+                            <td>{{ $horario->hora_e }}</td>
+                            <td>{{ $horario->hora_s }}</td>
                             <td>
                                 <a href="{{ url('horarios/' . $horario->id . '/edit') }}" class="btn btn-warning btn-sm">Editar</a>
                             </td>
