@@ -29,14 +29,24 @@
                 <div class="mb-3 row">
                     <label for="medico_id" class="col-sm-2 col-form-label">Medico:</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="medico_id" id="medico_id" value="{{ old('medico_id') }}" required>
+                        <select name="medico_id" id="horarios" class="form-select">
+                            <option value="">Seleccionar Médico</option>
+                            @foreach ($medicos as $medico)
+                                <option value="{{ $medico->id }}">{{ $medico->nombre }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
 
                 <div class="mb-3 row">
                     <label for="paciente_id" class="col-sm-2 col-form-label">Paciente:</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="Paciente:" id="paciente_id" value="{{ old('paciente_id') }}" required>
+                        <select name="paciente_id" id="horarios" class="form-select">
+                            <option value="">Seleccionar Paciente</option>
+                            @foreach ($pacientes as $paciente)
+                                <option value="{{ $paciente->id }}">{{ $paciente->nombre }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
 
