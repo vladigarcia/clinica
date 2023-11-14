@@ -13,8 +13,8 @@
                         <th>#</th>  
                         <th>ID MEDICO</th>
                         <th>ID PACIENTE</th>
+                        <th>FECHA DE ATENCIÓN</th>
                         <th>FECHA DE INGRESO</th>
-                        <th>FECHA DE ATENCION </th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -25,8 +25,8 @@
                             <td>{{ $cita->id }}</td>
                             <td>{{ $cita->id_medico }}</td>
                             <td>{{ $cita->id_paciente}}</td>
-                            <td>{{ $fecha_ }}</td>
-                            <td>{{ $cita->fecha_a }}</td>
+                            <td>{{ $cita->$fecha_a }}</td>
+                            <td>{{ $cita->$created_at }}</td>
                             <td>
                                 <a href="{{ url('citas/' . $cita->id . '/edit') }}" class="btn btn-warning btn-sm">Editar</a>
                             </td>

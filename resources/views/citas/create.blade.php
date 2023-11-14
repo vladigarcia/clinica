@@ -27,16 +27,16 @@
                 @csrf
 
                 <div class="mb-3 row">
-                    <label for="id_medico" class="col-sm-2 col-form-label">id_medico:</label>
+                    <label for="medico_id" class="col-sm-2 col-form-label">Medico:</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="id_medico" id="id_medico" value="{{ old('id_medico') }}" required>
+                        <input type="text" class="form-control" name="medico_id" id="medico_id" value="{{ old('medico_id') }}" required>
                     </div>
                 </div>
 
                 <div class="mb-3 row">
-                    <label for="id_paciente" class="col-sm-2 col-form-label">id_paciente:</label>
+                    <label for="paciente_id" class="col-sm-2 col-form-label">Paciente:</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="id_paciente" id="id_paciente" value="{{ old('id_paciente') }}" required>
+                        <input type="text" class="form-control" name="Paciente:" id="paciente_id" value="{{ old('paciente_id') }}" required>
                     </div>
                 </div>
 

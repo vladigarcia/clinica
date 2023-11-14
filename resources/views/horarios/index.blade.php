@@ -15,7 +15,7 @@
                         <th>DÍA DE TRABAJO</th>
                         <th>HORA DE ENTRADA</th>
                         <th>HORA DE SALIDA</th>
-                        <th colspan="2">Funciones</th>
+                        <th colspan="2">FUNCIONES</th>
                     </tr>
                 </thead>
                 <tbody>
