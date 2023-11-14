@@ -1,6 +1,6 @@
 @extends('layouts/template')
 
-@section('title', 'Registrando Horarios | Clinica Jóse Remedos')
+@section('title', 'Registrando Horarios de la muerte | Clinica Jóse Remedos')
 
 @section('contenido')
 
