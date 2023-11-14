@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Horario;
 use App\Models\Medico;
+use App\Models\Dia;
 use Illuminate\Http\Request;
 
 class HorarioController extends Controller
@@ -16,7 +17,7 @@ class HorarioController extends Controller
 
     public function create()
     {
-        return view('horarios.create', ['medicos' => Medico::all()]);
+        return view('horarios.create', ['medicos' => Medico::all()], ['dias' => Dia::all()]);
     }
 
     public function store(Request $request)
@@ -47,7 +48,7 @@ class HorarioController extends Controller
     {
         $horario = Horario::find($id);
         $medico = Medico::all();
-        return view('horario$horarios.edit', ['horario' => $horario, 'medico' => $medico]);
+        return view('horario$horarios.edit', ['horario' => $horario, 'medico' => $medico, 'dia' => $dia]);
     }
 
     public function update(Request $request, Horario $horario)

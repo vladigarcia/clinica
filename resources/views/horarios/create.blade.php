@@ -39,7 +39,12 @@
                 <div class="mb-3 row">
                     <label for="dia_trabajo" class="col-sm-2 col-form-label">Día de Trabajo:</label>
                     <div class="col-sm-5">
-                        <input type="date" class="form-control" name="dia_trabajo" id="dia_trabajo" value="{{ old('dia_trabajo') }}" required>
+                        <select name="dia_trabajo" id="horarios" class="form-select">
+                            <option value="">Seleccione Día</option>
+                            @foreach ($dias as $dia)
+                                <option value="{{ $dia->nombre }}">{{ $dia->nombre }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
 
