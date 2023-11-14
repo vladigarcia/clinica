@@ -23,10 +23,10 @@
                     @foreach ($citas as $cita)
                         <tr>
                             <td>{{ $cita->id }}</td>
-                            <td>{{ $cita->medico_id }}</td>
-                            <td>{{ $cita->paciente_id }}</td>
-                            <td>{{ $cita->$fecha_a }}</td>
-                            <td>{{ $cita->$created_at }}</td>
+                            <td>{{ $cita->id_medico }}</td>
+                            <td>{{ $cita->id_paciente}}</td>
+                            <td>{{ $cita->fecha_a }}</td>
+                            <td>{{ $cita->created_at }}</td>
                             <td>
                                 <a href="{{ url('citas/' . $cita->id . '/edit') }}" class="btn btn-warning btn-sm">Editar</a>
                             </td>
