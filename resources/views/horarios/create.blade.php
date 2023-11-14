@@ -41,8 +41,8 @@
                     <div class="col-sm-5">
                         <select name="dia_trabajo" id="horarios" class="form-select">
                             <option value="">Seleccione Día</option>
-                            @foreach ($dias as $dia)
-                                <option value="{{ $dia->id }}">{{ $dia->nombre }}</option>
+                            @foreach ($dias as $day)
+                                <option value="{{ $day->id }}">{{ $day->nombre }}</option>
                             @endforeach
                         </select>
                     </div>

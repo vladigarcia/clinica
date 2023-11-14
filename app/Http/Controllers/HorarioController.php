@@ -17,7 +17,9 @@ class HorarioController extends Controller
 
     public function create()
     {
-        return view('horarios.create', ['medicos' => Medico::all()], ['dias' => Dia::all()]);
+        $medicos=Medico::all();
+        $dias=Dia::all();
+        return view('horarios.create', compact('dias','medicos'));
     }
 
     public function store(Request $request)

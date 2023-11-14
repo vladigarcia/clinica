@@ -12,4 +12,7 @@ class Horario extends Model
     {
         return $this->belongsTo(Medico::class, 'medico_id', 'id');
     }
+    public function day(){
+        return $this->belongsTo(Dia::class,'dia_trabajo', 'id');
+    }
 }
