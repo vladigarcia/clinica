@@ -20,7 +20,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('medico_id')->references('id')->on('medicos');
-            $table->foreign('dia_trabajo')->references('dia')->on('dias');
+            $table->foreign('dia_trabajo')->references('id')->on('dias');
         });
     }
 
